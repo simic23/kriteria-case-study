@@ -129,14 +129,23 @@ In production and in active daily use. Running a controlled rollout to a small g
 
 ## Screenshots
 
-See [`screenshots/`](./screenshots).
+### Optimizer — stop-loss parameter sweep
 
-| File | Shows |
-|---|---|
-| `journal.png` | Trade log with the full filter set |
-| `stats.png` | Aggregate metrics and break-even simulation |
-| `optimizer.png` | Stop-loss parameter sweep with stability flagging |
+![Optimizer](screenshots/optimizer.png)
 
+Each stop-loss factor is replayed across the full trade set. The `unstable` flag marks parameter regions where many trades sit on the decision boundary — the value that looks best is not always the one to trust.
+
+### Stats — aggregate performance and break-even simulation
+
+![Stats](screenshots/stats.png)
+
+R-multiple distributions, MFE/MAE, profit factor, expectancy and hit rates, with the break-even simulator comparing actual against simulated outcomes on recorded trade paths.
+
+### Journal — trade log and filtering
+
+![Journal](screenshots/journal.png)
+
+Every trade carries its originating configuration. EA fills are shown next to what the indicator intended, with the delta made explicit. Monetary figures are redacted.
 ---
 
 *Built and maintained by [Ivan Šimić](https://www.linkedin.com/in/ivan-simic/).*
